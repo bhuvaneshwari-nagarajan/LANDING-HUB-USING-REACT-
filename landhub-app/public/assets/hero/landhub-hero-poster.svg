@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c10" />
+      <stop offset="45%" stop-color="#141824" />
+      <stop offset="75%" stop-color="#2a1b24" />
+      <stop offset="100%" stop-color="#4a2529" />
+    </linearGradient>
+    <linearGradient id="waterGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#12161f" />
+      <stop offset="50%" stop-color="#1c1622" />
+      <stop offset="100%" stop-color="#0e1017" />
+    </linearGradient>
+    <linearGradient id="glowGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#A9232B" stop-opacity="0.35" />
+      <stop offset="60%" stop-color="#267B43" stop-opacity="0.12" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </linearGradient>
+    <linearGradient id="glassGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.18" />
+      <stop offset="40%" stop-color="#ffd599" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#ffaa55" stop-opacity="0.05" />
+    </linearGradient>
+    <linearGradient id="glassGrad2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
+      <stop offset="50%" stop-color="#e0a96d" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#1a1118" stop-opacity="0.8" />
+    </linearGradient>
+    <linearGradient id="concreteGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#26282e" />
+      <stop offset="50%" stop-color="#343842" />
+      <stop offset="100%" stop-color="#1e2025" />
+    </linearGradient>
+    <filter id="blurAtmosphere" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="40" />
+    </filter>
+  </defs>
+
+  <!-- Sky Background -->
+  <rect width="1920" height="1080" fill="url(#skyGrad)" />
+
+  <!-- Distant Atmospheric Glow -->
+  <circle cx="1180" cy="520" r="480" fill="url(#glowGrad)" filter="url(#blurAtmosphere)" />
+
+  <!-- Distant Dubai Skyline Silhouettes -->
+  <g fill="#0c0e14" opacity="0.65">
+    <rect x="880" y="320" width="18" height="280" />
+    <polygon points="889,240 885,320 893,320" />
+    <rect x="915" y="380" width="35" height="220" />
+    <rect x="965" y="340" width="28" height="260" />
+    <rect x="1010" y="410" width="45" height="190" />
+    <polygon points="1080,290 1070,600 1090,600" />
+    <rect x="1110" y="360" width="40" height="240" />
+    <rect x="1165" y="420" width="55" height="180" />
+    <rect x="1235" y="390" width="32" height="210" />
+    <rect x="1285" y="440" width="60" height="160" />
+  </g>
+
+  <!-- Ground Landscape & Platform -->
+  <polygon points="0,680 1920,640 1920,1080 0,1080" fill="#14151a" />
+
+  <!-- Reflecting Pool -->
+  <polygon points="180,720 1740,700 1860,1040 60,1040" fill="url(#waterGrad)" />
+  <!-- Water Light Streaks -->
+  <line x1="400" y1="740" x2="1500" y2="740" stroke="#ffcc88" stroke-opacity="0.15" stroke-width="2" />
+  <line x1="300" y1="810" x2="1600" y2="810" stroke="#ffaa55" stroke-opacity="0.12" stroke-width="3" />
+  <line x1="200" y1="900" x2="1700" y2="900" stroke="#ffffff" stroke-opacity="0.08" stroke-width="4" />
+
+  <!-- Modern Luxury Villa Architecture -->
+  <!-- Upper Cantilevered Floor -->
+  <polygon points="260,340 1480,310 1460,490 240,510" fill="url(#concreteGrad)" stroke="#454a57" stroke-width="1.5" />
+  <!-- Upper Floor Glass Facade -->
+  <polygon points="280,360 1440,330 1430,470 270,490" fill="url(#glassGrad1)" />
+  <!-- Interior Warm Glow Upper Level -->
+  <rect x="360" y="380" width="220" height="85" fill="#ffe0b2" opacity="0.4" filter="url(#blurAtmosphere)" />
+  <rect x="780" y="370" width="340" height="85" fill="#ffb74d" opacity="0.35" filter="url(#blurAtmosphere)" />
+  <!-- Upper Mullions & Architectural Slits -->
+  <g stroke="#1a1c22" stroke-width="3">
+    <line x1="480" y1="355" x2="470" y2="480" />
+    <line x1="680" y1="350" x2="670" y2="475" />
+    <line x1="920" y1="345" x2="910" y2="470" />
+    <line x1="1160" y1="340" x2="1150" y2="465" />
+    <line x1="1340" y1="335" x2="1330" y2="460" />
+  </g>
+
+  <!-- Deep Cantilever Ceiling Shadow -->
+  <polygon points="240,510 1460,490 1440,540 220,550" fill="#0c0d11" opacity="0.9" />
+
+  <!-- Ground Floor Living Pavilions -->
+  <polygon points="380,540 1620,520 1600,720 360,735" fill="url(#concreteGrad)" stroke="#3b3f4a" stroke-width="1" />
+  <!-- Grand Ground Floor Glass Walls -->
+  <polygon points="410,555 1580,535 1565,705 395,720" fill="url(#glassGrad2)" />
+
+  <!-- Ground Floor Interior Luxury Illumination -->
+  <ellipse cx="640" cy="630" rx="180" ry="60" fill="#ffcc80" opacity="0.5" filter="url(#blurAtmosphere)" />
+  <ellipse cx="1200" cy="620" rx="240" ry="65" fill="#ffa726" opacity="0.45" filter="url(#blurAtmosphere)" />
+
+  <!-- Ground Floor Structural Columns -->
+  <g fill="#18191f">
+    <rect x="520" y="545" width="22" height="170" />
+    <rect x="840" y="540" width="22" height="170" />
+    <rect x="1160" y="535" width="22" height="170" />
+    <rect x="1440" y="530" width="22" height="170" />
+  </g>
+
+  <!-- Architectural Feature Wall - Charcoal & Warm Wood Slats -->
+  <g fill="#211d1c" stroke="#3d3432" stroke-width="1">
+    <rect x="180" y="480" width="160" height="260" />
+    <line x1="200" y1="480" x2="200" y2="740" />
+    <line x1="220" y1="480" x2="220" y2="740" />
+    <line x1="240" y1="480" x2="240" y2="740" />
+    <line x1="260" y1="480" x2="260" y2="740" />
+    <line x1="280" y1="480" x2="280" y2="740" />
+    <line x1="300" y1="480" x2="300" y2="740" />
+    <line x1="320" y1="480" x2="320" y2="740" />
+  </g>
+
+  <!-- Dramatic Terrace Lighting Accents -->
+  <circle cx="480" cy="525" r="3" fill="#ffffff" />
+  <polygon points="480,528 440,580 520,580" fill="#ffddaa" opacity="0.15" />
+  <circle cx="800" cy="520" r="3" fill="#ffffff" />
+  <polygon points="800,523 760,575 840,575" fill="#ffddaa" opacity="0.15" />
+  <circle cx="1120" cy="515" r="3" fill="#ffffff" />
+  <polygon points="1120,518 1080,570 1160,570" fill="#ffddaa" opacity="0.15" />
+
+  <!-- Tropical Landscaping Silhouettes -->
+  <g fill="#0e1117" opacity="0.85">
+    <!-- Palm fronds right -->
+    <path d="M1720,720 Q1760,620 1820,580 Q1800,640 1810,720 Z" />
+    <path d="M1740,710 Q1810,610 1890,590 Q1840,650 1820,720 Z" />
+    <path d="M1700,730 Q1730,650 1780,630 Q1750,680 1730,730 Z" />
+    <!-- Architectural Agave & Planters left -->
+    <polygon points="120,740 220,740 200,820 140,820" fill="#1b1c22" />
+    <path d="M170,740 Q150,680 130,660 Q160,690 170,740 Z" fill="#101217" />
+    <path d="M170,740 Q170,670 170,650 Q175,690 170,740 Z" fill="#101217" />
+    <path d="M170,740 Q190,680 210,660 Q180,690 170,740 Z" fill="#101217" />
+  </g>
+
+  <!-- Pool Edge Linear LED Strip -->
+  <line x1="180" y1="720" x2="1740" y2="700" stroke="#267B43" stroke-width="2" opacity="0.75" />
+  <line x1="180" y1="721" x2="1740" y2="701" stroke="#ffffff" stroke-width="1" opacity="0.5" />
+</svg>

@@ -1,0 +1,102 @@
+/* LAND HUB Design System - Four Core Brand Shades */
+:root {
+  /* ==========================================================================
+     CORE BRAND SHADES
+     Black: #111111 | White: #FFFFFF | Red: #A9232B | Green: #267B43
+     ========================================================================== */
+  --color-black: #111111;
+  --color-white: #FFFFFF;
+  --color-red: #A9232B;
+  --color-green: #267B43;
+
+  /* Brand Accents */
+  --accent-red: var(--color-red);
+  --accent-green: var(--color-green);
+  --color-red-subtle: rgba(169, 35, 43, 0.08);
+  --color-red-border: rgba(169, 35, 43, 0.3);
+  --color-green-subtle: rgba(38, 123, 67, 0.08);
+  --color-green-border: rgba(38, 123, 67, 0.3);
+
+  /* Surfaces & Structural Contrasts */
+  --bg-primary: var(--color-white);
+  --bg-dark: var(--color-black);
+  --bg-subtle-light: #F9F9F9;
+  --bg-subtle-dark: #1A1A1A;
+  --bg-card: var(--color-white);
+  --bg-card-dark: #181818;
+
+  /* Typography Colors */
+  --text-primary: var(--color-black);
+  --text-muted: #555555;
+  --text-subtle: #777777;
+  --text-light-primary: var(--color-white);
+  --text-light-muted: #A0A0A0;
+  --text-light-subtle: #666666;
+
+  /* Borders & Hairlines */
+  --border-subtle: #E2E2E2;
+  --border-medium: #CCCCCC;
+  --border-dark-subtle: rgba(255, 255, 255, 0.12);
+  --border-dark-medium: rgba(255, 255, 255, 0.25);
+
+  /* Shadows (Restrained & Architectural - No Excessive Glow) */
+  --shadow-sm: 0 2px 8px rgba(17, 17, 17, 0.04);
+  --shadow-md: 0 8px 24px rgba(17, 17, 17, 0.07);
+  --shadow-lg: 0 20px 48px -12px rgba(17, 17, 17, 0.12);
+  --shadow-dark: 0 20px 48px -12px rgba(0, 0, 0, 0.6);
+
+  /* Backward Compatibility Aliases */
+  --color-warm-ivory: var(--color-white);
+  --color-cream: #F7F7F7;
+  --color-soft-cream: #F7F7F7;
+  --color-sand-beige: #E2E2E2;
+  --color-light-taupe: #CCCCCC;
+  --color-warm-taupe: #CCCCCC;
+  --color-muted-brown: #555555;
+  --color-light-mocha: #555555;
+  --color-espresso: var(--color-black);
+  --color-charcoal-brown: var(--color-black);
+  --color-deep-brown: var(--color-black);
+  --color-charcoal: var(--color-black);
+  --color-midnight-sapphire: var(--color-black);
+  --color-navy-slate: #181818;
+  --color-platinum: var(--color-white);
+
+  --text-heading-dark: var(--color-black);
+  --text-heading-espresso: var(--color-black);
+  --text-body-dark: var(--color-black);
+  --text-body-muted: #555555;
+  --text-heading-white: var(--color-white);
+  --text-body-mist: #A0A0A0;
+
+  --border-warm-beige: var(--border-subtle);
+  --border-sand: var(--border-subtle);
+  --border-taupe: var(--border-medium);
+  --border-slate-hairline: var(--border-dark-subtle);
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
+  --font-sans: 'DM Sans', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Manrope', 'Plus Jakarta Sans', sans-serif;
+  --font-arabic: 'Segoe UI', Tahoma, Arial, sans-serif;
+
+  /* Fluid Spacing Scale */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+  --spacing-2xl: clamp(4.5rem, 8vw, 8rem);
+
+  /* Layout */
+  --max-width: 1400px;
+  --max-width-narrow: 1120px;
+  --gutter: clamp(1.25rem, 5vw, 4rem);
+
+  /* Transitions & Easing */
+  --ease-editorial: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.22s var(--ease-smooth);
+  --transition-normal: 0.45s var(--ease-editorial);
+  --transition-slow: 0.8s var(--ease-editorial);
+}

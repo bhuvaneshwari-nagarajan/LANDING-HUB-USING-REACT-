@@ -1,0 +1,243 @@
+/* LAND HUB Property Experience Section - Four Brand Shades */
+
+.lh-experience-section {
+  position: relative;
+  width: 100%;
+  padding: clamp(5rem, 9vw, 8.5rem) 0;
+  background-color: var(--color-white);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.lh-experience-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.lh-experience-header-tier {
+  max-width: 900px;
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.lh-experience-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.2vw, 3.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-black);
+  margin-top: 0.5rem;
+}
+
+.lh-experience-title .lh-serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-red);
+}
+
+.lh-experience-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+  color: #555555;
+  margin-top: 1rem;
+  max-width: 680px;
+}
+
+/* Immersive Theatre Frame */
+.lh-theatre-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.lh-theatre-display {
+  position: relative;
+  width: 100%;
+  height: clamp(440px, 58vh, 680px);
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--color-black);
+  box-shadow: 0 24px 60px -15px rgba(17, 17, 17, 0.15);
+}
+
+.lh-theatre-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.4s ease;
+}
+
+.lh-theatre-display.is-transitioning .lh-theatre-video {
+  opacity: 0.4;
+}
+
+.lh-theatre-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(17, 17, 17, 0.15) 0%,
+    rgba(17, 17, 17, 0.35) 45%,
+    rgba(17, 17, 17, 0.92) 100%
+  );
+  pointer-events: none;
+}
+
+/* Theatre Info Overlay */
+.lh-theatre-info-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(1.75rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 820px;
+  z-index: 5;
+}
+
+.lh-theatre-district-tag {
+  display: inline-block;
+  padding: 0.35rem 0.85rem;
+  background-color: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  align-self: flex-start;
+}
+
+.lh-theatre-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 800;
+  color: var(--color-white);
+  line-height: 1.15;
+}
+
+.lh-theatre-narrative {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.4vw, 1.1rem);
+  line-height: 1.6;
+  color: #CCCCCC;
+  max-width: 680px;
+}
+
+.lh-theatre-specs {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.lh-theatre-spec-pill {
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--color-white);
+}
+
+/* Scene Selector Grid */
+.lh-scene-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(1rem, 2vw, 1.75rem);
+}
+
+.lh-scene-tab-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem clamp(1.25rem, 2vw, 1.75rem);
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-editorial);
+  box-shadow: 0 4px 16px rgba(17, 17, 17, 0.04);
+}
+
+html[dir="rtl"] .lh-scene-tab-card {
+  text-align: right;
+}
+
+.lh-scene-tab-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-black);
+  box-shadow: 0 12px 28px -6px rgba(17, 17, 17, 0.08);
+}
+
+.lh-scene-tab-card.is-active {
+  background-color: var(--color-white);
+  border-color: var(--color-red);
+  border-width: 2px;
+  box-shadow: 0 14px 36px -8px rgba(169, 35, 43, 0.18);
+  transform: translateY(-4px);
+}
+
+.lh-scene-tab-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.65rem;
+}
+
+.lh-scene-tab-cat {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.lh-scene-tab-pip {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--border-subtle);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.lh-scene-tab-card.is-active .lh-scene-tab-pip {
+  background-color: var(--color-green);
+  transform: scale(1.3);
+}
+
+.lh-scene-tab-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 0.25rem;
+}
+
+.lh-scene-tab-district {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: #777777;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .lh-scene-selector-grid {
+    grid-template-columns: 1fr;
+  }
+}

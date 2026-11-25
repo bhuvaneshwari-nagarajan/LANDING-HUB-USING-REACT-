@@ -1,0 +1,277 @@
+/* Minimalist Left-Side Symbol Navigation - LAND HUB */
+
+.lh-vertical-symbol-nav {
+  position: fixed;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 850;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: auto;
+  user-select: none;
+}
+
+html[dir="rtl"] .lh-vertical-symbol-nav {
+  left: auto;
+  right: 20px;
+}
+
+.lh-symbol-nav-track {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+}
+
+/* 1px Thin Vertical Connecting Line */
+.lh-symbol-nav-spine {
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  background-color: rgba(17, 17, 17, 0.14);
+  z-index: 1;
+}
+
+/* Progress Fill on Connecting Line */
+.lh-symbol-spine-progress {
+  width: 100%;
+  background: linear-gradient(180deg, var(--color-red) 0%, var(--color-black) 100%);
+  transition: height 0.4s var(--ease-editorial);
+}
+
+/* Smooth Animated Active Indicator Badge */
+.lh-symbol-active-indicator {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  margin-left: -19px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--color-red);
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 4px 16px rgba(169, 35, 43, 0.18);
+  pointer-events: none;
+  z-index: 2;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 2px;
+}
+
+/* Subtle Green Live Beacon Pip */
+.lh-indicator-beacon {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  box-shadow: 0 0 6px rgba(38, 123, 67, 0.7);
+  animation: beaconPulse 2.4s ease-in-out infinite;
+}
+
+/* Vertical Stack of Symbols */
+.lh-symbol-markers-list {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* 38px button + 10px gap = 48px pitch for indicator slide */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lh-symbol-item {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  color: #777777;
+  transition: color 0.3s ease, transform 0.3s var(--ease-editorial);
+}
+
+.lh-symbol-icon-wrap {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  transition: all 0.3s var(--ease-editorial);
+}
+
+.lh-symbol-icon-wrap svg {
+  width: 15px;
+  height: 15px;
+  transition: transform 0.3s var(--ease-editorial);
+}
+
+.lh-symbol-item:hover {
+  color: var(--color-black);
+}
+
+.lh-symbol-item:hover .lh-symbol-icon-wrap {
+  background-color: var(--color-white);
+  border-color: rgba(17, 17, 17, 0.3);
+  transform: scale(1.12);
+  color: var(--color-black);
+}
+
+/* Active Section Symbol State */
+.lh-symbol-item.is-active {
+  color: var(--color-black);
+}
+
+.lh-symbol-item.is-active .lh-symbol-icon-wrap {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-red);
+  transform: scale(1.08);
+}
+
+/* Micro Tooltip on Hover */
+.lh-symbol-tooltip {
+  position: absolute;
+  left: 48px;
+  top: 50%;
+  transform: translateY(-50%) translateX(-8px);
+  padding: 0.35rem 0.65rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  visibility: hidden;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.25s var(--ease-editorial), transform 0.25s var(--ease-editorial), visibility 0.25s ease;
+  z-index: 10;
+}
+
+html[dir="rtl"] .lh-symbol-tooltip {
+  left: auto;
+  right: 48px;
+  transform: translateY(-50%) translateX(8px);
+}
+
+.lh-tooltip-index {
+  color: var(--color-green);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.lh-symbol-item:hover .lh-symbol-tooltip,
+.lh-symbol-item:focus-visible .lh-symbol-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+/* Keyframes */
+@keyframes beaconPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(0.8);
+  }
+}
+
+/* Mobile & Tablet Adaptations */
+@media (max-width: 991px) {
+  .lh-vertical-symbol-nav {
+    left: 12px;
+  }
+  html[dir="rtl"] .lh-vertical-symbol-nav {
+    left: auto;
+    right: 12px;
+  }
+}
+
+@media (max-width: 767px) {
+  /* On mobile: transform into a sleek bottom horizontal symbol pill */
+  .lh-vertical-symbol-nav {
+    left: 50%;
+    right: auto;
+    top: auto;
+    bottom: 16px;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(17, 17, 17, 0.12);
+    border-radius: 9999px;
+    padding: 4px 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  }
+
+  html[dir="rtl"] .lh-vertical-symbol-nav {
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+  }
+
+  .lh-symbol-nav-spine {
+    display: none;
+  }
+
+  .lh-symbol-active-indicator {
+    top: 50%;
+    left: 8px;
+    margin-left: 0;
+    margin-top: -17px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    transition: transform 0.4s var(--ease-editorial);
+  }
+
+  .lh-symbol-markers-list {
+    flex-direction: row;
+    gap: 6px;
+  }
+
+  .lh-symbol-item {
+    width: 34px;
+    height: 34px;
+  }
+
+  .lh-symbol-icon-wrap {
+    width: 28px;
+    height: 28px;
+    background-color: transparent;
+    border-color: transparent;
+  }
+
+  .lh-symbol-tooltip {
+    display: none;
+  }
+}

@@ -1,0 +1,231 @@
+/* LAND HUB Footer - Four Brand Shades */
+
+.lh-footer {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: clamp(4rem, 7vw, 6rem) 0 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lh-footer-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.lh-footer-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.5rem);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* Left Column: Brand */
+.lh-footer-brand-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.lh-footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.lh-footer-brand-title {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+}
+
+.lh-footer-brand-slogan {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--color-red);
+}
+
+.lh-footer-address {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: #888888;
+  max-width: 320px;
+}
+
+/* Center Column: Navigation */
+.lh-footer-nav-col,
+.lh-footer-contact-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.lh-footer-col-heading {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+}
+
+.lh-footer-nav-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.lh-footer-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
+  color: #AAAAAA;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.lh-footer-nav-link:hover {
+  color: var(--color-red);
+  transform: translateX(4px);
+}
+
+html[dir="rtl"] .lh-footer-nav-link:hover {
+  transform: translateX(-4px);
+}
+
+.lh-footer-link-arrow {
+  opacity: 0;
+  font-size: 0.85rem;
+  color: var(--color-red);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.lh-footer-nav-link:hover .lh-footer-link-arrow {
+  opacity: 1;
+}
+
+/* Right Column: Contact */
+.lh-footer-contact-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+}
+
+.lh-footer-line-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.lh-footer-line-lbl {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #777777;
+}
+
+.lh-footer-line-val {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-white);
+  transition: color 0.2s ease;
+}
+
+a.lh-footer-line-val:hover {
+  color: var(--color-red);
+}
+
+.lh-footer-wa-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.65rem 1rem;
+  background-color: var(--color-green);
+  border: 1px solid var(--color-green);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: var(--color-white);
+  transition: all 0.2s ease;
+  width: fit-content;
+}
+
+.lh-footer-wa-link:hover {
+  background-color: #1E6135;
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(38, 123, 67, 0.3);
+}
+
+.lh-footer-wa-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-white);
+}
+
+.lh-footer-top-anchor {
+  margin-top: 2rem;
+}
+
+.lh-back-to-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888888;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.lh-back-to-top:hover {
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+/* Bottom Tier */
+.lh-footer-bottom-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-top: 1.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: #777777;
+  flex-wrap: wrap;
+}
+
+.lh-footer-copy {
+  margin: 0;
+}
+
+.lh-footer-compliance {
+  margin: 0;
+  max-width: 580px;
+  font-size: 0.72rem;
+  color: #666666;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .lh-footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}

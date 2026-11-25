@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="discBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#171922" />
+      <stop offset="60%" stop-color="#221e25" />
+      <stop offset="100%" stop-color="#301b20" />
+    </linearGradient>
+    <linearGradient id="terrace" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#343742" />
+      <stop offset="100%" stop-color="#1f2128" />
+    </linearGradient>
+    <linearGradient id="pool" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a2e26" />
+      <stop offset="100%" stop-color="#0f1915" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#discBg)" />
+
+  <!-- Ambient Sky Glow -->
+  <circle cx="580" cy="180" r="180" fill="#A9232B" opacity="0.25" filter="blur(30px)" />
+
+  <!-- Horizon Line -->
+  <line x1="0" y1="340" x2="800" y2="340" stroke="#333744" stroke-width="1" />
+
+  <!-- Infinity Edge Pool -->
+  <polygon points="60,340 740,340 780,480 20,480" fill="url(#pool)" />
+  <line x1="60" y1="340" x2="740" y2="340" stroke="#267B43" stroke-width="2" opacity="0.8" />
+  <line x1="120" y1="410" x2="680" y2="410" stroke="#ffffff" stroke-width="1" opacity="0.1" />
+
+  <!-- Modern Villa Silhouette -->
+  <!-- Upper Volume Cantilever -->
+  <polygon points="140,140 680,120 660,240 130,250" fill="url(#terrace)" stroke="#4d5366" stroke-width="1.5" />
+  <!-- Glass Inset -->
+  <polygon points="160,155 650,135 640,225 150,235" fill="#ffd180" opacity="0.4" />
+  <g stroke="#1a1c24" stroke-width="2">
+    <line x1="280" y1="145" x2="270" y2="230" />
+    <line x1="420" y1="135" x2="410" y2="225" />
+    <line x1="540" y1="130" x2="530" y2="220" />
+  </g>
+
+  <!-- Ground Level Living Pavilion -->
+  <polygon points="180,250 710,230 690,340 170,350" fill="#1b1c24" />
+  <polygon points="200,260 680,245 670,335 190,345" fill="#ffb74d" opacity="0.3" />
+
+  <!-- Architectural Pillars -->
+  <rect x="290" y="250" width="12" height="95" fill="#101117" />
+  <rect x="460" y="245" width="12" height="95" fill="#101117" />
+  <rect x="610" y="240" width="12" height="95" fill="#101117" />
+
+  <!-- Palms -->
+  <path d="M680,340 Q710,270 750,230 Q730,290 710,340 Z" fill="#0d0e14" />
+  <path d="M700,340 Q740,280 780,260 Q750,310 720,345 Z" fill="#0d0e14" />
+</svg>

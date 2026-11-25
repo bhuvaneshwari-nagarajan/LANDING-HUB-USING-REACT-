@@ -1,0 +1,109 @@
+/* Minimalist Official Logo Intro Loader - LAND HUB */
+
+.lh-page-loader-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background-color: var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.7s ease;
+  pointer-events: all;
+  user-select: none;
+}
+
+.lh-page-loader-overlay.is-fading {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.lh-page-loader-stage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Official Logo Wrap & Subtle Entrance Animation */
+.lh-loader-logo-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: logoSubtleEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.lh-loader-official-logo {
+  max-width: clamp(180px, 30vw, 240px);
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 4px 18px rgba(0, 0, 0, 0.5));
+}
+
+/* Minimalist Progress Line Indicator (Runs over the 2-second intro) */
+.lh-loader-progress-track {
+  width: clamp(140px, 20vw, 180px);
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.12);
+  margin-top: 2rem;
+  overflow: hidden;
+  position: relative;
+  border-radius: 1px;
+}
+
+.lh-loader-progress-fill {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    var(--color-red) 0%,
+    var(--color-white) 50%,
+    var(--color-green) 100%
+  );
+  transform: translateX(-100%);
+  animation: loaderProgressFill 2s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+
+/* Keyframes */
+@keyframes logoSubtleEntrance {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(6px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes loaderProgressFill {
+  0% {
+    transform: translateX(-100%);
+  }
+  60% {
+    transform: translateX(-20%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lh-loader-logo-wrap {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+  .lh-loader-progress-fill {
+    animation: none;
+    transform: translateX(0);
+  }
+}

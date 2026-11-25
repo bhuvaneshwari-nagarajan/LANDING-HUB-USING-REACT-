@@ -1,0 +1,234 @@
+/* LAND HUB About Section - Four Brand Shades */
+
+.lh-about-section {
+  position: relative;
+  width: 100%;
+  padding: clamp(5rem, 9vw, 8.5rem) 0;
+  background-color: #FBFBFB;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  overflow: hidden;
+}
+
+.lh-about-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.lh-about-header-tier {
+  max-width: 900px;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.lh-about-monumental-heading {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.2vw, 3.85rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  color: var(--color-black);
+  margin-top: 0.5rem;
+}
+
+.lh-about-monumental-heading .lh-serif-accent {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--color-red);
+}
+
+/* Dual Column Layout */
+.lh-about-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(2.5rem, 6vw, 6rem);
+  align-items: start;
+}
+
+/* Narrative Column */
+.lh-about-lead-text {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  line-height: 1.65;
+  color: #333333;
+  margin-bottom: 2.5rem;
+  font-weight: 400;
+}
+
+.lh-about-disciplines {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: 2.75rem;
+}
+
+.lh-discipline-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.lh-discipline-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  margin-top: 0.55rem;
+  flex-shrink: 0;
+}
+
+.lh-discipline-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.lh-discipline-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.lh-discipline-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555555;
+}
+
+/* Quote */
+.lh-about-quote {
+  padding: 1.75rem 2rem;
+  background-color: var(--color-white);
+  border-left: 3px solid var(--color-red);
+  border-radius: 0 2px 2px 0;
+  box-shadow: 0 10px 30px -10px rgba(17, 17, 17, 0.05);
+  border-top: 1px solid var(--border-subtle);
+  border-right: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+html[dir="rtl"] .lh-about-quote {
+  border-left: 1px solid var(--border-subtle);
+  border-right: 3px solid var(--color-red);
+  border-radius: 2px 0 0 2px;
+}
+
+.lh-quote-body {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: var(--color-black);
+}
+
+.lh-quote-signature {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.lh-sig-line {
+  width: 24px;
+  height: 1px;
+  background-color: var(--border-subtle);
+}
+
+.lh-sig-author {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+/* Visual Column */
+.lh-about-visual-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.lh-about-media-frame {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 20px 50px -15px rgba(17, 17, 17, 0.1);
+  background-color: var(--color-black);
+}
+
+/* Metric Dock */
+.lh-metric-dock {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr auto 1fr;
+  align-items: center;
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-white);
+  border-top: 1px solid var(--border-subtle);
+}
+
+.lh-metric-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.lh-metric-val {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--color-black);
+}
+
+.lh-metric-lbl {
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.lh-metric-sep {
+  width: 1px;
+  height: 32px;
+  background-color: var(--border-subtle);
+}
+
+/* Mandate Card */
+.lh-about-mandate-card {
+  padding: 1.25rem 1.5rem;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+}
+
+.lh-mandate-tag {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.lh-mandate-text {
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
+  color: var(--color-black);
+  line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .lh-about-grid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="supBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141312" />
+      <stop offset="60%" stop-color="#1e1b19" />
+      <stop offset="100%" stop-color="#2a221d" />
+    </linearGradient>
+    <linearGradient id="woodPanel" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#3b2b24" />
+      <stop offset="50%" stop-color="#4a362d" />
+      <stop offset="100%" stop-color="#32241e" />
+    </linearGradient>
+    <linearGradient id="marbleDesk" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8e4dc" />
+      <stop offset="60%" stop-color="#d4cebe" />
+      <stop offset="100%" stop-color="#b8b09f" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#supBg)" />
+
+  <!-- Warm Advisory Lounge Lighting -->
+  <circle cx="400" cy="180" r="160" fill="#ffb74d" opacity="0.18" filter="blur(35px)" />
+  <circle cx="280" cy="220" r="140" fill="#A9232B" opacity="0.12" filter="blur(35px)" />
+
+  <!-- Rear Walnut Architectural Slatted Wall -->
+  <rect x="80" y="80" width="640" height="260" fill="url(#woodPanel)" stroke="#574035" stroke-width="1" />
+  <g stroke="#261b16" stroke-width="2">
+    <line x1="120" y1="80" x2="120" y2="340" />
+    <line x1="160" y1="80" x2="160" y2="340" />
+    <line x1="200" y1="80" x2="200" y2="340" />
+    <line x1="240" y1="80" x2="240" y2="340" />
+    <line x1="280" y1="80" x2="280" y2="340" />
+    <line x1="320" y1="80" x2="320" y2="340" />
+    <line x1="360" y1="80" x2="360" y2="340" />
+    <line x1="400" y1="80" x2="400" y2="340" />
+    <line x1="440" y1="80" x2="440" y2="340" />
+    <line x1="480" y1="80" x2="480" y2="340" />
+    <line x1="520" y1="80" x2="520" y2="340" />
+    <line x1="560" y1="80" x2="560" y2="340" />
+    <line x1="600" y1="80" x2="600" y2="340" />
+    <line x1="640" y1="80" x2="640" y2="340" />
+    <line x1="680" y1="80" x2="680" y2="340" />
+  </g>
+
+  <!-- Fine Art Frame on Wall -->
+  <rect x="300" y="120" width="200" height="130" fill="#181719" stroke="#A9232B" stroke-width="1.5" />
+  <circle cx="400" cy="185" r="35" fill="none" stroke="#267B43" stroke-width="1" opacity="0.6" />
+  <line x1="340" y1="185" x2="460" y2="185" stroke="#ffffff" stroke-width="0.75" opacity="0.4" />
+
+  <!-- Marble Executive Consultation Table -->
+  <polygon points="160,340 640,340 680,440 120,440" fill="url(#marbleDesk)" stroke="#8c8474" stroke-width="1" />
+  <!-- Marble Veining -->
+  <path d="M220,350 Q300,380 380,360 Q460,390 540,370" stroke="#7d7666" stroke-width="1" fill="none" opacity="0.4" />
+  <path d="M180,380 Q280,410 400,390 Q500,430 620,400" stroke="#7d7666" stroke-width="1" fill="none" opacity="0.3" />
+
+  <!-- Front Table Bevel Face -->
+  <polygon points="120,440 680,440 670,470 130,470" fill="#9e9584" />
+
+  <!-- Designer Lounge Chairs Silhouettes -->
+  <!-- Left Chair -->
+  <polygon points="200,280 280,260 300,360 210,360" fill="#141312" stroke="#332a24" stroke-width="1" />
+  <!-- Right Chair -->
+  <polygon points="600,280 520,260 500,360 590,360" fill="#141312" stroke="#332a24" stroke-width="1" />
+</svg>

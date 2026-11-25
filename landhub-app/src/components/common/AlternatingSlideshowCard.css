@@ -1,0 +1,159 @@
+/* Alternating Direction Image Slideshow - LAND HUB */
+
+.lh-alternating-slideshow-frame {
+  position: relative;
+  width: 100%;
+  border-radius: 2px;
+  overflow: hidden;
+  background-color: var(--color-black);
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 16px 40px -10px rgba(17, 17, 17, 0.1);
+  display: flex;
+}
+
+/* Stable Backdrop */
+.lh-slideshow-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: #1A1A1A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.lh-slideshow-watermark {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  color: rgba(255, 255, 255, 0.08);
+}
+
+/* Image Container with State-Based Transitions */
+.lh-slideshow-image-container {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  will-change: transform, opacity;
+  transition: transform 0.75s var(--ease-editorial), opacity 0.65s ease;
+}
+
+.lh-slideshow-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.lh-alternating-slideshow-frame:hover .lh-slideshow-img {
+  transform: scale(1.04);
+}
+
+.lh-slideshow-editorial-vignette {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(17, 17, 17, 0.65) 100%);
+  pointer-events: none;
+}
+
+/* 1. VISIBLE STATE */
+.lh-slideshow-image-container.stage-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+/* 2. EXITING STATE (Smooth fade/scale out) */
+.lh-slideshow-image-container.stage-exiting {
+  opacity: 0;
+  transform: scale(1.03);
+}
+
+/* 3. WAITING STATE (~2 seconds pause) */
+.lh-slideshow-image-container.stage-waiting {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* 4. ENTERING FROM RIGHT */
+.lh-slideshow-image-container.stage-entering.dir-right {
+  opacity: 1;
+  animation: slideInFromRight 0.75s var(--ease-editorial) forwards;
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0) scale(1.04);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* 5. ENTERING FROM LEFT */
+.lh-slideshow-image-container.stage-entering.dir-left {
+  opacity: 1;
+  animation: slideInFromLeft 0.75s var(--ease-editorial) forwards;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0) scale(1.04);
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+/* Micro Status Pill */
+.lh-slideshow-pill {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  background-color: rgba(17, 17, 17, 0.85);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+}
+
+.lh-slideshow-pip {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: var(--color-red);
+}
+
+.lh-slideshow-counter {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--color-white);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lh-slideshow-image-container {
+    transition: opacity 0.3s ease !important;
+    animation: none !important;
+    transform: none !important;
+  }
+}

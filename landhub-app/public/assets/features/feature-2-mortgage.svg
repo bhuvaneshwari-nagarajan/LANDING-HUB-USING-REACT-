@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="mortBg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f1418" />
+      <stop offset="60%" stop-color="#141c22" />
+      <stop offset="100%" stop-color="#1a2b25" />
+    </linearGradient>
+    <linearGradient id="towerGlass1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a3d3c" />
+      <stop offset="50%" stop-color="#3c5750" />
+      <stop offset="100%" stop-color="#1b2826" />
+    </linearGradient>
+    <linearGradient id="towerGlass2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#ffd599" stop-opacity="0.35" />
+      <stop offset="50%" stop-color="#267B43" stop-opacity="0.25" />
+      <stop offset="100%" stop-color="#111718" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="url(#mortBg)" />
+
+  <!-- Green & Amber Ambient Glow -->
+  <circle cx="380" cy="220" r="160" fill="#267B43" opacity="0.2" filter="blur(35px)" />
+  <circle cx="480" cy="180" r="140" fill="#A9232B" opacity="0.15" filter="blur(35px)" />
+
+  <!-- Grid Perspective Floor -->
+  <g stroke="#267B43" stroke-width="0.75" opacity="0.25">
+    <line x1="0" y1="460" x2="800" y2="460" />
+    <line x1="0" y1="430" x2="800" y2="430" />
+    <line x1="0" y1="410" x2="800" y2="410" />
+    <line x1="100" y1="500" x2="350" y2="390" />
+    <line x1="280" y1="500" x2="380" y2="390" />
+    <line x1="520" y1="500" x2="420" y2="390" />
+    <line x1="700" y1="500" x2="450" y2="390" />
+  </g>
+
+  <!-- Financial District Towers (DIFC / Sheikh Zayed Road Style) -->
+  <!-- Background Tower -->
+  <polygon points="180,180 280,150 280,420 180,420" fill="#141a1f" stroke="#2b3740" stroke-width="1" />
+  <polygon points="520,160 640,130 640,420 520,420" fill="#141a1f" stroke="#2b3740" stroke-width="1" />
+
+  <!-- Main Iconic Geometric Twin Towers / Gate Building Archetype -->
+  <!-- Left Tower -->
+  <polygon points="260,80 370,120 370,440 260,440" fill="url(#towerGlass1)" stroke="#4a635a" stroke-width="1.5" />
+  <polygon points="260,80 370,120 370,440 260,440" fill="url(#towerGlass2)" />
+  <!-- Facet Division Lines -->
+  <g stroke="#ffffff" stroke-width="0.75" opacity="0.25">
+    <line x1="260" y1="140" x2="370" y2="180" />
+    <line x1="260" y1="200" x2="370" y2="240" />
+    <line x1="260" y1="260" x2="370" y2="300" />
+    <line x1="260" y1="320" x2="370" y2="360" />
+    <line x1="260" y1="380" x2="370" y2="420" />
+  </g>
+
+  <!-- Right Tower -->
+  <polygon points="430,120 540,80 540,440 430,440" fill="url(#towerGlass1)" stroke="#4a635a" stroke-width="1.5" />
+  <polygon points="430,120 540,80 540,440 430,440" fill="url(#towerGlass2)" />
+  <!-- Facet Division Lines -->
+  <g stroke="#ffffff" stroke-width="0.75" opacity="0.25">
+    <line x1="430" y1="180" x2="540" y2="140" />
+    <line x1="430" y1="240" x2="540" y2="200" />
+    <line x1="430" y1="300" x2="540" y2="260" />
+    <line x1="430" y1="360" x2="540" y2="320" />
+    <line x1="430" y1="420" x2="540" y2="380" />
+  </g>
+
+  <!-- Skybridge Linking the Financial Towers -->
+  <polygon points="350,160 450,160 450,210 350,210" fill="#202c29" stroke="#4a635a" stroke-width="1.5" />
+  <rect x="365" y="175" width="70" height="20" fill="#ffd599" opacity="0.5" />
+
+  <!-- Horizon Ground Platform -->
+  <rect x="120" y="440" width="560" height="8" fill="#267B43" />
+</svg>

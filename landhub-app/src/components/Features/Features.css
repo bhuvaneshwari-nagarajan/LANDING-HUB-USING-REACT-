@@ -1,0 +1,380 @@
+/* LAND HUB Capabilities & Services Showcase - Continuous Right-to-Left Rotation */
+.lh-features-section {
+  position: relative;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  padding: clamp(5rem, 8vw, 8rem) 0;
+  border-top: 1px solid var(--border-dark-subtle);
+  border-bottom: 1px solid var(--border-dark-subtle);
+  overflow: hidden;
+}
+
+.lh-features-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+/* Header Row */
+.lh-features-header-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: clamp(2.5rem, 5vw, 3.5rem);
+  flex-wrap: wrap;
+}
+
+.lh-features-header {
+  max-width: 800px;
+}
+
+.lh-features-meta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.lh-features-meta .lh-meta-tag {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-red);
+}
+
+.lh-features-meta .lh-meta-divider {
+  width: 18px;
+  height: 1px;
+  background-color: var(--border-dark-subtle);
+}
+
+.lh-features-meta .lh-meta-sub {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  color: #999999;
+}
+
+.lh-features-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.2vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.12;
+  color: var(--color-white);
+  margin-bottom: 1rem;
+  letter-spacing: -0.03em;
+}
+
+.lh-features-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  line-height: 1.65;
+  color: #AAAAAA;
+  max-width: 680px;
+}
+
+/* Ticker Status Control Pill */
+.lh-ticker-status-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.lh-ticker-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.5rem 1.1rem;
+  background-color: #1A1A1A;
+  border: 1px solid var(--border-dark-subtle);
+  border-radius: 30px;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--color-white);
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lh-ticker-status-pill:hover {
+  background-color: #222222;
+  border-color: var(--color-red);
+  transform: translateY(-1px);
+}
+
+.lh-status-pulse-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  transition: background-color 0.25s ease;
+}
+
+.lh-ticker-status-pill.is-paused .lh-status-pulse-dot {
+  background-color: #666666;
+}
+
+.lh-status-icon {
+  font-size: 0.7rem;
+  opacity: 0.7;
+}
+
+/* ==========================================================================
+   INFINITE SCROLLING SHOWCASE (ROTATING FROM RIGHT TO LEFT)
+   ========================================================================== */
+.lh-ticker-outer-viewport {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  padding: 1.5rem 0 2.5rem 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+}
+
+.lh-ticker-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+  /* Continuously moves from RIGHT TO LEFT */
+  animation: tickerSlideRightToLeft 42s linear infinite;
+}
+
+.lh-ticker-track.is-paused {
+  animation-play-state: paused;
+}
+
+@keyframes tickerSlideRightToLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-100% / 3));
+  }
+}
+
+@keyframes tickerSlideRightToLeftRTL {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(100% / 3));
+  }
+}
+
+html[dir="rtl"] .lh-ticker-track {
+  animation-name: tickerSlideRightToLeftRTL;
+}
+
+/* Capability Cards */
+.lh-capability-card {
+  width: clamp(340px, 28vw, 420px);
+  flex-shrink: 0;
+  background-color: #161616;
+  border: 1px solid var(--border-dark-subtle);
+  border-radius: 2px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s var(--ease-editorial),
+              border-color 0.3s ease,
+              box-shadow 0.4s var(--ease-editorial);
+  position: relative;
+}
+
+.lh-capability-card:hover,
+.lh-capability-card:focus-within {
+  transform: translateY(-8px);
+  border-color: var(--color-red);
+  box-shadow: 0 20px 48px -12px rgba(0, 0, 0, 0.8);
+}
+
+.lh-capability-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: transparent;
+  transition: background-color 0.4s ease;
+  z-index: 4;
+}
+
+.lh-capability-card:hover::before {
+  background: var(--color-red);
+}
+
+/* Card Media Header */
+.lh-card-media-wrapper {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  overflow: hidden;
+  background-color: var(--color-black);
+}
+
+.lh-card-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.7s var(--ease-editorial);
+}
+
+.lh-capability-card:hover .lh-card-video {
+  transform: scale(1.05);
+}
+
+.lh-card-media-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(22, 22, 22, 1) 0%, rgba(22, 22, 22, 0.4) 50%, transparent 100%);
+  z-index: 1;
+}
+
+.lh-card-category-badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  padding: 0.35rem 0.85rem;
+  background: rgba(17, 17, 17, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-white);
+}
+
+html[dir="rtl"] .lh-card-category-badge {
+  left: auto;
+  right: 1rem;
+}
+
+/* Card Body Content */
+.lh-card-body {
+  padding: 1.75rem 2rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background-color: #161616;
+}
+
+.lh-card-header-line {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.75rem;
+}
+
+.lh-card-discipline-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+}
+
+.lh-card-service-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #888888;
+}
+
+.lh-card-title {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-white);
+  margin-bottom: 0.85rem;
+}
+
+.lh-card-desc {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: #BBBBBB;
+  margin-bottom: 1.5rem;
+  flex-grow: 1;
+}
+
+/* Highlights */
+.lh-card-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.lh-highlight-pill {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.35rem 0.75rem;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #CCCCCC;
+  transition: all 0.25s ease;
+}
+
+.lh-capability-card:hover .lh-highlight-pill {
+  border-color: var(--color-green);
+  color: var(--color-white);
+}
+
+/* Card Action Link */
+.lh-card-action {
+  margin-top: auto;
+}
+
+.lh-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  transition: color 0.25s ease;
+}
+
+.lh-card-link:hover {
+  color: var(--color-white);
+}
+
+.lh-card-arrow {
+  transition: transform 0.25s ease;
+}
+
+.lh-capability-card:hover .lh-card-arrow {
+  transform: translateX(5px);
+}
+
+html[dir="rtl"] .lh-capability-card:hover .lh-card-arrow {
+  transform: translateX(-5px);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .lh-ticker-track {
+    animation: none;
+  }
+}

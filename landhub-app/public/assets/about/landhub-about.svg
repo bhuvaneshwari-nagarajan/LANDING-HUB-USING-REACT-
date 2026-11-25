@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aboutSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#14171f" />
+      <stop offset="60%" stop-color="#24222a" />
+      <stop offset="100%" stop-color="#3b2b2b" />
+    </linearGradient>
+    <linearGradient id="stoneTravertine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#d9d4cb" />
+      <stop offset="50%" stop-color="#c5bfb4" />
+      <stop offset="100%" stop-color="#a69f93" />
+    </linearGradient>
+    <linearGradient id="darkBronze" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2c2826" />
+      <stop offset="100%" stop-color="#171514" />
+    </linearGradient>
+    <linearGradient id="warmInterior" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffb74d" stop-opacity="0.65" />
+      <stop offset="70%" stop-color="#ffe082" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.1" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="25" />
+    </filter>
+  </defs>
+
+  <!-- Sky Canvas -->
+  <rect width="1200" height="900" fill="url(#aboutSky)" />
+
+  <!-- Background Ambience -->
+  <circle cx="850" cy="380" r="320" fill="#A9232B" opacity="0.22" filter="url(#softGlow)" />
+
+  <!-- Ground Landscape Terrace -->
+  <polygon points="0,580 1200,540 1200,900 0,900" fill="#1b1c20" />
+  <polygon points="120,620 1080,590 1140,860 60,860" fill="#111317" />
+  <line x1="120" y1="620" x2="1080" y2="590" stroke="#267B43" stroke-width="2" opacity="0.6" />
+
+  <!-- Travertine Architectural Wall Feature -->
+  <polygon points="140,240 440,220 420,680 120,700" fill="url(#stoneTravertine)" />
+  <!-- Stone Grooves / Texture -->
+  <g stroke="#968e82" stroke-width="1.5" opacity="0.4">
+    <line x1="140" y1="320" x2="435" y2="300" />
+    <line x1="135" y1="410" x2="430" y2="390" />
+    <line x1="130" y1="500" x2="425" y2="480" />
+    <line x1="125" y1="590" x2="420" y2="570" />
+  </g>
+
+  <!-- Modern Cantilever Pavilion -->
+  <polygon points="360,260 1060,220 1040,420 340,440" fill="url(#darkBronze)" stroke="#423b38" stroke-width="1.5" />
+
+  <!-- Floor-to-Ceiling Luxury Glass Panel -->
+  <polygon points="380,280 1020,245 1010,400 370,420" fill="url(#warmInterior)" />
+  <rect x="420" y="300" width="160" height="80" fill="#ffe082" opacity="0.5" filter="url(#softGlow)" />
+
+  <!-- Glass Mullions -->
+  <g stroke="#1a1817" stroke-width="3">
+    <line x1="540" y1="270" x2="530" y2="410" />
+    <line x1="700" y1="260" x2="690" y2="400" />
+    <line x1="860" y1="250" x2="850" y2="390" />
+  </g>
+
+  <!-- Ground Level Lounge & Glass Facade -->
+  <polygon points="400,440 1080,410 1060,640 380,660" fill="#1e1e24" />
+  <polygon points="420,460 1040,430 1030,620 410,640" fill="url(#warmInterior)" opacity="0.85" />
+  <rect x="680" y="480" width="220" height="110" fill="#ffca28" opacity="0.35" filter="url(#softGlow)" />
+
+  <!-- Architectural Columns -->
+  <rect x="520" y="445" width="16" height="195" fill="#101014" />
+  <rect x="760" y="435" width="16" height="190" fill="#101014" />
+  <rect x="980" y="425" width="16" height="185" fill="#101014" />
+
+  <!-- Floating Concrete Stepping Stones in Water -->
+  <polygon points="180,680 340,670 320,720 160,730" fill="#42454f" />
+  <polygon points="360,670 520,660 500,710 340,720" fill="#42454f" />
+  <polygon points="540,660 700,650 680,700 520,710" fill="#42454f" />
+
+  <!-- Warm Minimalist Exterior Lighting Sconces -->
+  <circle cx="280" cy="360" r="4" fill="#ffffff" />
+  <polygon points="280,364 250,420 310,420" fill="#ffcc80" opacity="0.25" />
+  <circle cx="280" cy="540" r="4" fill="#ffffff" />
+  <polygon points="280,544 250,600 310,600" fill="#ffcc80" opacity="0.25" />
+
+  <!-- Editorial Subtropical Plant Silhouettes -->
+  <path d="M1040,680 Q1090,560 1140,510 Q1120,600 1110,680 Z" fill="#0d0e12" />
+  <path d="M1060,660 Q1130,570 1190,540 Q1150,630 1120,690 Z" fill="#0b0c0f" />
+</svg>

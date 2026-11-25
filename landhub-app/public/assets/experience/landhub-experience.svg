@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="100%" height="100%">
+  <defs>
+    <linearGradient id="expSky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0a0c10" />
+      <stop offset="50%" stop-color="#191c26" />
+      <stop offset="85%" stop-color="#2c222b" />
+      <stop offset="100%" stop-color="#3d2127" />
+    </linearGradient>
+    <linearGradient id="expWater" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#141822" />
+      <stop offset="50%" stop-color="#191d28" />
+      <stop offset="100%" stop-color="#0e1017" />
+    </linearGradient>
+    <linearGradient id="expGoldGlass" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3" />
+      <stop offset="40%" stop-color="#ffcc80" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#19141d" stop-opacity="0.8" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="1000" fill="url(#expSky)" />
+
+  <!-- Crimson & Forest Green Atmospheric Horizon Glow -->
+  <circle cx="1100" cy="520" r="380" fill="#A9232B" opacity="0.25" filter="blur(60px)" />
+  <circle cx="500" cy="540" r="320" fill="#267B43" opacity="0.15" filter="blur(50px)" />
+
+  <!-- Distant Coastline & Palm Island Silhouette -->
+  <g fill="#0f1118" opacity="0.7">
+    <path d="M0,640 Q300,620 600,640 Q900,610 1200,635 Q1400,620 1600,640 L1600,670 L0,670 Z" />
+    <!-- Distant Yachts & Lights -->
+    <circle cx="340" cy="625" r="2" fill="#ffd180" />
+    <circle cx="780" cy="615" r="2.5" fill="#ffffff" />
+    <circle cx="1320" cy="620" r="2" fill="#ffd180" />
+  </g>
+
+  <!-- Ground Landscape & Infinity Terrace Pool -->
+  <polygon points="0,660 1600,640 1600,1000 0,1000" fill="#14151c" />
+  <polygon points="120,690 1480,670 1560,980 40,980" fill="url(#expWater)" />
+  <line x1="120" y1="690" x2="1480" y2="670" stroke="#267B43" stroke-width="2.5" opacity="0.8" />
+
+  <!-- Reflections on Water Surface -->
+  <line x1="280" y1="720" x2="1320" y2="720" stroke="#ffe082" stroke-width="2" opacity="0.18" />
+  <line x1="200" y1="780" x2="1400" y2="780" stroke="#ffb74d" stroke-width="3" opacity="0.12" />
+  <line x1="100" y1="870" x2="1500" y2="870" stroke="#ffffff" stroke-width="3" opacity="0.08" />
+
+  <!-- Massive Architectural Modernist Residence -->
+  <!-- Upper Floor Linear Floating Wing -->
+  <polygon points="160,320 1340,280 1320,460 140,480" fill="#262830" stroke="#4a4f5e" stroke-width="2" />
+  <!-- Upper Glazed Curtain Wall -->
+  <polygon points="180,340 1300,300 1290,440 170,460" fill="url(#expGoldGlass)" />
+
+  <!-- Upper Mullions -->
+  <g stroke="#16171d" stroke-width="3">
+    <line x1="380" y1="335" x2="370" y2="455" />
+    <line x1="600" y1="325" x2="590" y2="445" />
+    <line x1="840" y1="315" x2="830" y2="435" />
+    <line x1="1080" y1="305" x2="1070" y2="425" />
+  </g>
+
+  <!-- Deep Cantilevered Soffit -->
+  <polygon points="140,480 1320,460 1300,510 120,520" fill="#0d0e12" />
+
+  <!-- Main Ground Floor Glass Pavilion -->
+  <polygon points="260,520 1440,490 1420,680 240,700" fill="#1b1c24" />
+  <polygon points="280,535 1410,505 1395,665 270,685" fill="url(#expGoldGlass)" opacity="0.9" />
+
+  <!-- Interior Architectural Illumination -->
+  <ellipse cx="500" cy="600" rx="160" ry="50" fill="#ffe082" opacity="0.45" filter="blur(30px)" />
+  <ellipse cx="1050" cy="580" rx="220" ry="55" fill="#ffa726" opacity="0.4" filter="blur(30px)" />
+
+  <!-- Architectural Columns -->
+  <rect x="420" y="525" width="20" height="165" fill="#111217" />
+  <rect x="740" y="515" width="20" height="165" fill="#111217" />
+  <rect x="1060" y="505" width="20" height="165" fill="#111217" />
+  <rect x="1280" y="495" width="20" height="165" fill="#111217" />
+
+  <!-- Architectural Feature Slabs left -->
+  <polygon points="80,440 220,440 200,710 60,710" fill="#323038" stroke="#524e5c" stroke-width="1.5" />
+
+  <!-- Landscaping Silhouette -->
+  <g fill="#0b0d12">
+    <path d="M1420,680 Q1460,580 1520,530 Q1500,610 1490,680 Z" />
+    <path d="M1440,670 Q1510,570 1580,540 Q1540,620 1510,680 Z" />
+    <path d="M1400,690 Q1440,600 1480,580 Q1450,640 1430,690 Z" />
+  </g>
+</svg>

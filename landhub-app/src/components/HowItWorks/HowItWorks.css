@@ -1,0 +1,569 @@
+/* LAND HUB Process - Sequential Step Progression (Line by Line) - Four Brand Shades */
+.lh-process-section {
+  position: relative;
+  background-color: #FBFBFB;
+  color: var(--color-black);
+  padding: clamp(5rem, 8vw, 8.5rem) 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.lh-process-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+/* Section Header */
+.lh-process-header {
+  max-width: 860px;
+  margin-bottom: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+.lh-process-title {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 4.2vw, 3.85rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-black);
+  margin: 0.5rem 0 1rem;
+  letter-spacing: -0.03em;
+}
+
+.lh-process-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(1rem, 1.25vw, 1.2rem);
+  line-height: 1.65;
+  color: #555555;
+  max-width: 720px;
+}
+
+/* ==========================================================================
+   SEQUENTIAL STEP PROGRESSION TRACK (LINE BY LINE)
+   ========================================================================== */
+.lh-sequential-progression-track {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: clamp(4rem, 7vw, 6.5rem);
+  position: relative;
+}
+
+/* Individual Stage Row */
+.lh-progression-row {
+  display: grid;
+  grid-template-columns: 240px 1fr 280px;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: stretch;
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: 0 4px 18px rgba(17, 17, 17, 0.04);
+  transition: all 0.35s var(--ease-editorial);
+  position: relative;
+  cursor: pointer;
+}
+
+.lh-progression-row:hover,
+.lh-progression-row.is-active {
+  border-color: var(--color-red);
+  box-shadow: 0 16px 40px -10px rgba(169, 35, 43, 0.12);
+  transform: translateY(-2px);
+}
+
+.lh-progression-row:focus-visible {
+  outline: 2px solid var(--color-red);
+  outline-offset: 2px;
+}
+
+/* Left Column: Spine & Stage Indicator */
+.lh-progression-spine-col {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.lh-progression-node-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  height: 100%;
+}
+
+.lh-progression-node {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--border-subtle);
+  background-color: var(--color-white);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  margin-top: 0.35rem;
+}
+
+.lh-progression-row.is-active .lh-progression-node {
+  border-color: var(--color-red);
+  background-color: var(--color-red);
+  box-shadow: 0 0 0 4px rgba(169, 35, 43, 0.2);
+  transform: scale(1.15);
+}
+
+.lh-progression-connecting-line {
+  width: 2px;
+  flex: 1;
+  min-height: 48px;
+  background-color: var(--border-subtle);
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  position: relative;
+}
+
+.lh-connecting-arrow {
+  font-size: 0.85rem;
+  color: var(--color-red);
+  margin-top: auto;
+  line-height: 1;
+  transform: translateY(6px);
+}
+
+.lh-progression-row.is-active .lh-progression-connecting-line {
+  background-color: var(--color-red);
+}
+
+.lh-progression-name-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.lh-progression-stage-name {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  color: var(--color-black);
+  line-height: 1.15;
+}
+
+.lh-progression-stage-tagline {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin-top: 0.35rem;
+}
+
+/* Middle Column: Narrative & Deliverables */
+.lh-progression-content-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lh-progression-heading {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.lh-progression-desc {
+  font-family: var(--font-sans);
+  font-size: 0.925rem;
+  line-height: 1.6;
+  color: #444444;
+  margin-bottom: 1.15rem;
+}
+
+.lh-progression-deliverables {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.lh-progression-deliverable-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  color: #555555;
+  line-height: 1.45;
+}
+
+.lh-deliverable-check {
+  color: var(--color-green);
+  font-size: 0.85rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Right Column: Media Preview Frame with Layered Parallax Depth */
+.lh-progression-media-col {
+  display: flex;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.lh-progression-media-frame {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--color-black);
+  box-shadow: 0 8px 24px -6px rgba(17, 17, 17, 0.12);
+  transition: transform 0.65s var(--ease-editorial), box-shadow 0.65s var(--ease-editorial), border-color 0.4s ease;
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+/* Layered Parallax Depth: Architectural offset hairline backplate */
+.lh-progression-media-frame::before {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border: 1px solid transparent;
+  pointer-events: none;
+  z-index: 3;
+  transition: border-color 0.4s ease;
+}
+
+/* Subtle Shimmer Glass Sheen */
+.lh-progression-media-frame::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.12), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  z-index: 4;
+  transition: transform 0.8s ease;
+}
+
+.lh-progression-row:hover .lh-progression-media-frame::after,
+.lh-progression-row.is-active .lh-progression-media-frame::after {
+  transform: skewX(-20deg) translateX(350%);
+}
+
+.lh-progression-row.is-active .lh-progression-media-frame {
+  border-color: var(--color-red);
+  box-shadow: 0 14px 32px -8px rgba(169, 35, 43, 0.22);
+}
+
+.lh-progression-video,
+.lh-progression-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.85s var(--ease-editorial), filter 0.6s ease;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
+  transform: translateZ(0);
+}
+
+/* Slow subtle floating motion and smooth left/right drift */
+.lh-progression-row:nth-child(odd) .lh-progression-img,
+.lh-progression-row:nth-child(odd) .lh-progression-video {
+  animation: processFloatDriftA 10s ease-in-out infinite alternate;
+}
+
+.lh-progression-row:nth-child(even) .lh-progression-img,
+.lh-progression-row:nth-child(even) .lh-progression-video {
+  animation: processFloatDriftB 12s ease-in-out infinite alternate;
+}
+
+/* Gentle scale transitions on hover and active */
+.lh-progression-row.is-active .lh-progression-video,
+.lh-progression-row.is-active .lh-progression-img {
+  transform: scale(1.04);
+}
+
+.lh-progression-row:hover .lh-progression-video,
+.lh-progression-row:hover .lh-progression-img {
+  transform: scale(1.06);
+}
+
+.lh-progression-media-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(17, 17, 17, 0.72) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.lh-progression-district-tag {
+  position: absolute;
+  bottom: 0.65rem;
+  left: 0.75rem;
+  z-index: 3;
+  font-family: var(--font-sans);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-white);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+}
+
+html[dir="rtl"] .lh-progression-district-tag {
+  left: auto;
+  right: 0.75rem;
+}
+
+/* ==========================================================================
+   CONNECTED CAPABILITIES SECTION
+   ========================================================================== */
+.lh-connected-suite-container {
+  background-color: var(--color-white);
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: clamp(2rem, 5vw, 3.5rem);
+  box-shadow: 0 8px 30px -10px rgba(17, 17, 17, 0.06);
+}
+
+.lh-connected-header {
+  margin-bottom: 2rem;
+  max-width: 780px;
+}
+
+.lh-connected-kicker {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.lh-connected-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+  font-weight: 800;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+}
+
+.lh-connected-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555555;
+}
+
+.lh-connected-tabs-bar {
+  display: flex;
+  gap: 0.85rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.lh-connected-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1.25rem;
+  background-color: #F7F7F7;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  font-family: var(--font-sans);
+  font-size: 0.825rem;
+  font-weight: 600;
+  color: #555555;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.lh-connected-tab:hover {
+  border-color: var(--color-black);
+  color: var(--color-black);
+  background-color: var(--color-white);
+}
+
+.lh-connected-tab.is-active {
+  background-color: var(--color-black);
+  border-color: var(--color-black);
+  color: var(--color-white);
+  box-shadow: 0 4px 14px rgba(17, 17, 17, 0.2);
+}
+
+.lh-tab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #999999;
+  transition: background-color 0.2s ease;
+}
+
+.lh-connected-tab.is-active .lh-tab-dot {
+  background-color: var(--color-green);
+}
+
+/* Connected View Card */
+.lh-connected-view-card {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  background-color: #FAFAFA;
+  border: 1px solid var(--border-subtle);
+  border-radius: 2px;
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  transition: opacity 0.26s ease;
+}
+
+.lh-connected-view-card.is-fading {
+  opacity: 0.3;
+}
+
+.lh-connected-view-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.lh-view-badge {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-red);
+  margin-bottom: 0.5rem;
+}
+
+.lh-view-title {
+  font-family: var(--font-display);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 0.5rem;
+}
+
+.lh-view-subtitle {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #555555;
+  margin-bottom: 1.5rem;
+}
+
+.lh-view-points {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-bottom: 2rem;
+}
+
+.lh-view-point-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: #444444;
+}
+
+.lh-point-bullet {
+  color: var(--color-green);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.lh-view-action {
+  margin-top: auto;
+}
+
+.lh-connected-view-media {
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+  background-color: var(--color-black);
+  min-height: 240px;
+}
+
+.lh-connected-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lh-connected-media-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 50%, rgba(17, 17, 17, 0.5) 100%);
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .lh-progression-row {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .lh-progression-spine-col {
+    align-items: center;
+  }
+
+  .lh-progression-connecting-line {
+    display: none;
+  }
+
+  .lh-progression-media-frame {
+    height: 180px;
+  }
+
+  .lh-connected-view-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Floating and Drift Keyframes for Process Images */
+@keyframes processFloatDriftA {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+  50% {
+    transform: translate3d(3px, -4px, 0) scale(1.035);
+  }
+  100% {
+    transform: translate3d(-3px, 2px, 0) scale(1.02);
+  }
+}
+
+@keyframes processFloatDriftB {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1.02);
+  }
+  50% {
+    transform: translate3d(-3px, -3px, 0) scale(1.035);
+  }
+  100% {
+    transform: translate3d(3px, 3px, 0) scale(1.02);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lh-progression-row:nth-child(odd) .lh-progression-img,
+  .lh-progression-row:nth-child(odd) .lh-progression-video,
+  .lh-progression-row:nth-child(even) .lh-progression-img,
+  .lh-progression-row:nth-child(even) .lh-progression-video {
+    animation: none;
+  }
+}
