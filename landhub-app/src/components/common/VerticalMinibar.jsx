@@ -68,21 +68,33 @@ const SECTIONS = [
 
 export function VerticalMinibar() {
   const [activeSection, setActiveSection] = useState('hero')
+  const [isOnDark, setIsOnDark] = useState(true)
 
   useEffect(() => {
-    const handleScroll = () => {
-      const scrollPos = window.scrollY + 280
+    const darkSections = new Set(['hero', 'about', 'features'])
 
+    const handleScroll = () => {
+      const scrollPos = window.scrollY + window.innerHeight * 0.45
+
+      let current = 'hero'
       for (let i = SECTIONS.length - 1; i >= 0; i--) {
         const el = document.getElementById(SECTIONS[i].id)
         if (el && el.offsetTop <= scrollPos) {
-          setActiveSection(SECTIONS[i].id)
-          return
+          current = SECTIONS[i].id
+          break
         }
       }
-      setActiveSection('hero')
+      setActiveSection(current)
+
+      const footer = document.querySelector('footer.lh-footer')
+      if (footer && footer.offsetTop <= scrollPos) {
+        setIsOnDark(true)
+      } else {
+        setIsOnDark(darkSections.has(current))
+      }
     }
 
+    handleScroll()
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -98,7 +110,7 @@ export function VerticalMinibar() {
 
   return (
     <nav
-      className="lh-vertical-symbol-nav"
+      className={`lh-vertical-symbol-nav ${isOnDark ? 'is-on-dark' : ''}`}
       aria-label="Section Navigation"
     >
       <div className="lh-symbol-nav-track">
@@ -125,7 +137,7 @@ export function VerticalMinibar() {
 
         {/* Vertical Symbols Stack */}
         <div className="lh-symbol-markers-list">
-          {SECTIONS.map((sec, idx) => {
+          {SECTIONS.map((sec) => {
             const isActive = activeSection === sec.id
 
             return (
@@ -141,10 +153,9 @@ export function VerticalMinibar() {
                   {sec.symbol}
                 </div>
 
-                {/* Micro Tooltip */}
+                {/* Hover-Only Minimal Tooltip (Hidden by Default) */}
                 <span className="lh-symbol-tooltip" role="tooltip">
-                  <span className="lh-tooltip-index">0{idx + 1}</span>
-                  <span className="lh-tooltip-label">{sec.label}</span>
+                  {sec.label}
                 </span>
               </button>
             )

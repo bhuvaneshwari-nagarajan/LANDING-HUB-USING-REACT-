@@ -18,18 +18,33 @@ export function PageLoader({ onComplete }) {
       return
     }
 
+    const prefersReducedMotion =
+      typeof window !== 'undefined' &&
+      window.matchMedia &&
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+    if (prefersReducedMotion) {
+      setIsMounted(false)
+      try {
+        sessionStorage.setItem('lh_intro_shown', 'true')
+      } catch {
+        // ignore storage errors
+      }
+      if (onComplete) onComplete()
+      return
+    }
+
     // Lock page scroll during the 2-second initial logo presentation
     const originalOverflow = document.body.style.overflow
     document.body.style.overflow = 'hidden'
 
-    // EXACT TIMING REQUIREMENT:
     // 0–2.0s: Display ONLY the official LAND HUB logo centered on black #111111
-    // At 2.0s: Initiate smooth cinematic fade-out transition
+    // At 2.0s: Initiate smooth cinematic curtain/fade-out transition
     const fadeTimer = setTimeout(() => {
       setIsFading(true)
     }, 2000)
 
-    // At 2.7s: Fully unmount loader, restore scroll, record session flag
+    // At 2.65s: Fully unmount loader, restore scroll, record session flag
     const unmountTimer = setTimeout(() => {
       document.body.style.overflow = originalOverflow
       setIsMounted(false)
@@ -39,7 +54,7 @@ export function PageLoader({ onComplete }) {
         // ignore storage errors
       }
       if (onComplete) onComplete()
-    }, 2700)
+    }, 2650)
 
     return () => {
       clearTimeout(fadeTimer)

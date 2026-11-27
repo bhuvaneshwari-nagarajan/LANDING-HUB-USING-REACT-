@@ -1,165 +1,170 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import { useInView } from '../../hooks/useInView'
 import { useLanguage } from '../../hooks/useLanguage'
 import './Features.css'
 
 export function Features() {
-  const [sectionRef, isInView] = useInView({ threshold: 0.1 })
-  const tickerRef = useRef(null)
+  const [sectionRef, isInView] = useInView({ threshold: 0.08 })
   const [isPaused, setIsPaused] = useState(false)
   const { t, isRTL } = useLanguage()
 
-  // Four verified service capability cards - strictly NO visible numbers
-  const featureCards = [
+  // PRYPCO #services-main: 3 Stepped Core Pillar Cards
+  const corePillars = [
     {
       id: 'discovery',
-      category: 'Real Estate Advisory',
+      tag: 'Real Estate',
       title: t('capDiscoveryTitle'),
-      videoSrc: '/assets/features/feat-elevator.mp4',
-      description: t('capDiscoveryDesc'),
-      highlights: ['Waterfront Penthouses', 'Off-Market Estates', 'Title Conveyance'],
-      scope: 'Prime Dubai Portfolio & Discretionary Sourcing',
+      desc: t('capDiscoveryDesc'),
+      video: '/assets/features/feat-elevator.mp4',
+      poster: '/assets/images/image-05.jpeg',
+      accent: 'red',
     },
     {
       id: 'mortgage',
-      category: 'Capital Structuring',
+      tag: 'Mortgages',
       title: t('capMortgageTitle'),
-      videoSrc: '/assets/features/feat-approval.mp4',
-      description: t('capMortgageDesc'),
-      highlights: ['Pre-Approval Structuring', 'Competitive Underwriting', 'Refinancing'],
-      scope: 'Whole-of-Market UAE Bank Leverage Optimization',
+      desc: t('capMortgageDesc'),
+      video: '/assets/features/feat-approval.mp4',
+      poster: '/assets/images/image-06.jpeg',
+      accent: 'green',
     },
     {
-      id: 'insights',
-      category: 'Market Intelligence',
-      title: t('capInsightsTitle'),
-      videoSrc: '/assets/features/feat-cards.mp4',
-      description: t('capInsightsDesc'),
-      highlights: ['Transparent LTV Ratios', 'Equity Optimization', 'Non-Resident Mortgages'],
-      scope: 'Borrowing Power Audit & Central Bank Compliance',
-    },
-    {
-      id: 'support',
-      category: 'Fiduciary Support',
+      id: 'conveyance',
+      tag: 'Conveyance',
       title: t('capSupportTitle'),
-      videoSrc: '/assets/features/feat-keys.mp4',
-      description: t('capSupportDesc'),
-      highlights: ['Trustee Conveyance', 'Valuation Coordination', 'Dedicated Representation'],
-      scope: 'End-to-End Handover & Land Department Conveyance',
+      desc: t('capSupportDesc'),
+      video: '/assets/features/feat-keys.mp4',
+      poster: '/assets/images/image-07.jpeg',
+      accent: 'white',
     },
   ]
 
-  // Render 3 repeating sets for a seamless infinite loop
-  const repeatingCards = [...featureCards, ...featureCards, ...featureCards]
+  // PRYPCO #services-list: Continuous Right-to-Left Ecosystem Marquee
+  const ecosystemItems = [
+    {
+      id: 'eco-1',
+      title: t('capDiscoveryTitle'),
+      sub: 'Villas, Townhouses & Penthouses',
+      video: '/assets/features/feat-elevator.mp4',
+    },
+    {
+      id: 'eco-2',
+      title: t('capMortgageTitle'),
+      sub: 'Whole-of-Market UAE Lenders',
+      video: '/assets/features/feat-approval.mp4',
+    },
+    {
+      id: 'eco-3',
+      title: t('capInsightsTitle'),
+      sub: 'Borrowing & LTV Optimization',
+      video: '/assets/features/feat-cards.mp4',
+    },
+    {
+      id: 'eco-4',
+      title: t('capSupportTitle'),
+      sub: 'Trustee & Title Deed Transfer',
+      video: '/assets/features/feat-keys.mp4',
+    },
+  ]
+
+  const repeatingEcosystem = [...ecosystemItems, ...ecosystemItems, ...ecosystemItems]
 
   return (
     <section
       id="features"
       ref={sectionRef}
-      className={`lh-features-section ${isInView ? 'is-revealed' : ''}`}
-      aria-label="Capabilities & Services Showcase"
+      className={`lh-prypco-services ${isInView ? 'is-revealed' : ''}`}
+      aria-label="Services & Capabilities"
     >
-      <div className="lh-features-container">
-        {/* Section Header */}
-        <div className="lh-features-header-row">
-          <div className="lh-features-header">
-            <div className="lh-features-meta reveal-init">
-              <span className="lh-meta-tag">{t('capabilitiesMetaTag')}</span>
-              <span className="lh-meta-divider" aria-hidden="true" />
-              <span className="lh-meta-sub">{t('capabilitiesMetaSub')}</span>
-            </div>
-
-            <h2 className="lh-features-title reveal-init reveal-delay-1">
-              {t('capabilitiesTitle')}
-            </h2>
-
-            <p className="lh-features-subtitle reveal-init reveal-delay-2">
-              {t('capabilitiesSubtitle')}
-            </p>
-          </div>
-
-          {/* Motion Status Badge & Pause/Play Control */}
-          <div className="lh-ticker-status-wrap reveal-init reveal-delay-2">
-            <button
-              type="button"
-              className={`lh-ticker-status-pill ${isPaused ? 'is-paused' : ''}`}
-              onClick={() => setIsPaused(!isPaused)}
-              aria-label={isPaused ? 'Resume continuous view' : 'Pause continuous view'}
-            >
-              <span className="lh-status-pulse-dot" aria-hidden="true" />
-              <span className="lh-status-label">
-                {isPaused ? 'Paused' : 'Continuous View'}
-              </span>
-              <span className="lh-status-icon" aria-hidden="true">
-                {isPaused ? '▶' : '❚❚'}
-              </span>
-            </button>
-          </div>
+      {/* Part 1: Stepped 3-Column Grid (PRYPCO #services-main Pattern) */}
+      <div className="lh-services-wrap">
+        <div className="lh-services-lead reveal-init">
+          <h2 className="lh-services-headline">
+            {isRTL
+              ? 'تملك منزل أحلامك، أو هيكل تمويلك العقاري بوضوح.'
+              : 'Own your dream home, or structure your mortgage with clarity.'}
+          </h2>
         </div>
-      </div>
 
-      {/* Infinite Scrolling Showcase - Rotating from RIGHT TO LEFT */}
-      <div
-        className="lh-ticker-outer-viewport"
-        onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}
-        onTouchStart={() => setIsPaused(true)}
-        onTouchEnd={() => setIsPaused(false)}
-        aria-live="polite"
-      >
-        <div
-          ref={tickerRef}
-          className={`lh-ticker-track ${isPaused ? 'is-paused' : ''}`}
-        >
-          {repeatingCards.map((card, idx) => (
-            <article
-              key={`${card.id}-${idx}`}
-              className="lh-capability-card"
-              tabIndex={0}
-              aria-label={card.title}
+        <div className="lh-stepped-grid">
+          {corePillars.map((pillar, idx) => (
+            <a
+              key={pillar.id}
+              href="#contact"
+              className={`lh-stepped-card step-${idx} reveal-init reveal-delay-${idx + 1}`}
             >
-              {/* Card Media Header with Video */}
-              <div className="lh-card-media-wrapper">
+              <div className="lh-stepped-top">
+                <span className={`lh-stepped-badge ${pillar.accent}`}>{pillar.tag}</span>
+                <h3 className="lh-stepped-title">{pillar.title}</h3>
+                <p className="lh-stepped-desc">{pillar.desc}</p>
+              </div>
+
+              <div className="lh-stepped-media">
                 <video
-                  className="lh-card-video"
                   autoPlay
                   muted
                   loop
                   playsInline
+                  poster={pillar.poster}
                   aria-hidden="true"
                 >
-                  <source src={card.videoSrc} type="video/mp4" />
+                  <source src={pillar.video} type="video/mp4" />
                 </video>
-                <div className="lh-card-media-overlay" />
-                <span className="lh-card-category-badge">{card.category}</span>
+                <span className="lh-stepped-arrow" aria-hidden="true">↗</span>
               </div>
-
-              {/* Card Body Content */}
-              <div className="lh-card-body">
-                <div className="lh-card-header-line">
-                  <span className="lh-card-discipline-dot" aria-hidden="true" />
-                  <span className="lh-card-service-label">{card.category}</span>
-                </div>
-                <h3 className="lh-card-title">{card.title}</h3>
-                <p className="lh-card-desc">{card.description}</p>
-
-                {/* Highlights */}
-                <div className="lh-card-highlights">
-                  {card.highlights.map((h) => (
-                    <span key={h} className="lh-highlight-pill">{h}</span>
-                  ))}
-                </div>
-
-                {/* Card Action Link */}
-                <div className="lh-card-action">
-                  <a href="#contact" className="lh-card-link">
-                    <span>Inquire</span>
-                    <span className="lh-card-arrow" aria-hidden="true">{isRTL ? '←' : '→'}</span>
-                  </a>
-                </div>
-              </div>
-            </article>
+            </a>
           ))}
+        </div>
+      </div>
+
+      {/* Part 2: Continuous Right-to-Left Ecosystem Carousel (PRYPCO #services-list Pattern) */}
+      <div className="lh-ecosystem-block">
+        <div className="lh-services-wrap lh-ecosystem-header">
+          <div>
+            <h3 className="lh-eco-title">{t('capabilitiesTitle')}</h3>
+            <p className="lh-eco-sub">{t('capabilitiesSubtitle')}</p>
+          </div>
+          <button
+            type="button"
+            className={`lh-eco-toggle ${isPaused ? 'is-paused' : ''}`}
+            onClick={() => setIsPaused(!isPaused)}
+            aria-label={isPaused ? 'Resume carousel' : 'Pause carousel'}
+          >
+            <span className="lh-eco-dot" aria-hidden="true" />
+            <span>{isPaused ? 'Paused' : 'Continuous'}</span>
+          </button>
+        </div>
+
+        <div
+          className="lh-eco-viewport"
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
+        >
+          <div className={`lh-eco-track ${isPaused ? 'is-paused' : ''}`}>
+            {repeatingEcosystem.map((item, idx) => (
+              <a
+                key={`${item.id}-${idx}`}
+                href="#contact"
+                className="lh-eco-card"
+                aria-label={item.title}
+              >
+                <div className="lh-eco-media">
+                  <video autoPlay muted loop playsInline aria-hidden="true">
+                    <source src={item.video} type="video/mp4" />
+                  </video>
+                </div>
+                <div className="lh-eco-body">
+                  <div>
+                    <h4 className="lh-eco-card-title">{item.title}</h4>
+                    <p className="lh-eco-card-sub">{item.sub}</p>
+                  </div>
+                  <span className="lh-eco-arrow" aria-hidden="true">
+                    {isRTL ? '←' : '→'}
+                  </span>
+                </div>
+              </a>
+            ))}
+          </div>
         </div>
       </div>
     </section>

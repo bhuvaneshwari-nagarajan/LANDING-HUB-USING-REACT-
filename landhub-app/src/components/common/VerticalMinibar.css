@@ -123,6 +123,38 @@ html[dir="rtl"] .lh-vertical-symbol-nav {
   transition: transform 0.3s var(--ease-editorial);
 }
 
+/* Dark-section adaptive styling */
+.lh-vertical-symbol-nav.is-on-dark .lh-symbol-nav-spine {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+.lh-vertical-symbol-nav.is-on-dark .lh-symbol-spine-progress {
+  background: linear-gradient(180deg, var(--color-red) 0%, var(--color-white) 100%);
+}
+
+.lh-vertical-symbol-nav.is-on-dark .lh-symbol-active-indicator {
+  background-color: rgba(17, 17, 17, 0.92);
+  box-shadow: 0 4px 18px rgba(169, 35, 43, 0.35);
+}
+
+.lh-vertical-symbol-nav.is-on-dark .lh-symbol-icon-wrap {
+  background-color: rgba(17, 17, 17, 0.68);
+  border-color: rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.lh-vertical-symbol-nav.is-on-dark .lh-symbol-item:hover .lh-symbol-icon-wrap {
+  background-color: var(--color-black);
+  border-color: rgba(255, 255, 255, 0.45);
+  color: var(--color-white);
+}
+
+.lh-vertical-symbol-nav.is-on-dark .lh-symbol-item.is-active .lh-symbol-icon-wrap {
+  background-color: transparent;
+  border-color: transparent;
+  color: var(--color-white);
+}
+
 .lh-symbol-item:hover {
   color: var(--color-black);
 }
@@ -146,18 +178,19 @@ html[dir="rtl"] .lh-vertical-symbol-nav {
   transform: scale(1.08);
 }
 
-/* Micro Tooltip on Hover */
+/* Micro Tooltip on Hover Only */
 .lh-symbol-tooltip {
   position: absolute;
-  left: 48px;
+  left: 46px;
   top: 50%;
-  transform: translateY(-50%) translateX(-8px);
-  padding: 0.35rem 0.65rem;
+  transform: translateY(-50%) translateX(-6px);
+  padding: 0.32rem 0.65rem;
   background-color: var(--color-black);
   color: var(--color-white);
-  border-radius: 2px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 9999px;
   font-family: var(--font-sans);
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -165,11 +198,8 @@ html[dir="rtl"] .lh-vertical-symbol-nav {
   pointer-events: none;
   opacity: 0;
   visibility: hidden;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
-  transition: opacity 0.25s var(--ease-editorial), transform 0.25s var(--ease-editorial), visibility 0.25s ease;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.22);
+  transition: opacity 0.2s var(--ease-editorial), transform 0.2s var(--ease-editorial), visibility 0.2s ease;
   z-index: 10;
 }
 

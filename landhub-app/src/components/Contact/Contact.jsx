@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useInView } from '../../hooks/useInView'
 import { useLanguage } from '../../hooks/useLanguage'
 import './Contact.css'
@@ -13,6 +13,16 @@ export function Contact() {
   })
   const [isSubmitted, setIsSubmitted] = useState(false)
   const { isRTL } = useLanguage()
+
+  useEffect(() => {
+    const handleSelectContact = (e) => {
+      if (e.detail?.interest) {
+        setFormData((prev) => ({ ...prev, interest: e.detail.interest }))
+      }
+    }
+    window.addEventListener('lh:select-contact', handleSelectContact)
+    return () => window.removeEventListener('lh:select-contact', handleSelectContact)
+  }, [])
 
   const whatsappUrl = 'https://wa.me/97148005363?text=' + encodeURIComponent('Hello LAND HUB, I would like to inquire about private client advisory services.')
 

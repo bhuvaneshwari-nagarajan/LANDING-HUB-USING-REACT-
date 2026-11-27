@@ -4,53 +4,39 @@ import { useLanguage } from '../../hooks/useLanguage'
 import './PropertyExperience.css'
 
 export function PropertyExperience() {
-  const [sectionRef, isInView] = useInView({ threshold: 0.12 })
+  const [sectionRef, isInView] = useInView({ threshold: 0.08 })
   const [activeScene, setActiveScene] = useState(0)
-  const [isTransitioning, setIsTransitioning] = useState(false)
   const { t, isRTL } = useLanguage()
 
-  // Curated Living Perspectives
   const scenes = [
     {
       id: 'penthouses',
       category: 'Sky Residences',
-      district: 'Downtown & Palm Jumeirah',
+      district: 'Downtown Dubai',
       title: 'Trophy Penthouses & Sky Mansions',
       src: '/assets/features/feat-elevator.mp4',
       poster: '/assets/images/image-01.jpeg',
-      specs: ['Private Glass Lift', 'Panoramic Horizons', 'Infinity Sky Terrace'],
-      narrative: 'Elevated duplex penthouses commanding unbroken skyline and ocean vistas, paired with bespoke private lift access and round-the-clock concierge.',
+      narrative: 'Elevated duplex penthouses commanding unbroken skyline vistas with private lift access.',
     },
     {
       id: 'beachfront',
       category: 'Coastal Estates',
-      district: 'Jumeirah Bay & La Mer',
+      district: 'Palm Jumeirah',
       title: 'Private Coastal Waterfront Villas',
       src: '/assets/experience/experience-villa.mp4',
       poster: '/assets/images/image-02.jpeg',
-      specs: ['Direct Beach Access', 'Private Yacht Mooring', 'Water Gardens'],
-      narrative: 'Rare beachfront sanctuaries balancing architectural purity with immediate coastal connectivity, tailored for discretionary wealth preservation.',
+      narrative: 'Rare beachfront sanctuaries balancing architectural purity with direct coastal access.',
     },
     {
       id: 'mansions',
-      category: 'Private Mansions',
-      district: 'Emirates Hills & Dubai Hills',
-      title: 'Ultra-Prime Private Family Compounds',
+      category: 'Private Estates',
+      district: 'Emirates Hills',
+      title: 'Ultra-Prime Family Compounds',
       src: '/assets/features/feat-family.mp4',
       poster: '/assets/images/image-03.jpeg',
-      specs: ['Private Sunset Grounds', 'Multigenerational Living', 'Legacy Security'],
-      narrative: 'Secluded luxury estates designed for multigenerational living, utmost residential discretion, and permanent wealth preservation.',
+      narrative: 'Secluded estates designed for multigenerational living and long-term preservation.',
     },
   ]
-
-  const handleSceneChange = (newIndex) => {
-    if (newIndex === activeScene) return
-    setActiveScene(newIndex)
-    setIsTransitioning(true)
-    setTimeout(() => {
-      setIsTransitioning(false)
-    }, 350)
-  }
 
   const current = scenes[activeScene]
 
@@ -58,37 +44,48 @@ export function PropertyExperience() {
     <section
       id="experience"
       ref={sectionRef}
-      className={`lh-experience-section ${isInView ? 'is-revealed' : ''}`}
-      aria-label="Curated Architectural Showcase"
+      className={`lh-prypco-experience ${isInView ? 'is-revealed' : ''}`}
+      aria-label="Property Experience"
     >
-      <div className="lh-experience-container">
-        {/* Section Header */}
-        <div className="lh-experience-header-tier reveal-init">
-          <div className="lh-section-kicker">
-            <span className="lh-section-kicker-dot" />
-            <span>LIVING EXCELLENCE</span>
+      {/* PRYPCO #quote Transition Zone (Dark -> Light #f5f5f5) */}
+      <div className="lh-quote-transition-zone">
+        <div className="lh-exp-wrap lh-quote-grid">
+          <div className="lh-quote-left reveal-init">
+            <span className="lh-quote-kicker">{t('philosophyMetaTag')}</span>
           </div>
 
-          <h2 className="lh-experience-title">
-            {isRTL ? (
-              <>تجارب سكنية تعيد تعريف <span className="lh-serif-accent">الفخامة المعمارية.</span></>
-            ) : (
-              <>Curated architectural concepts &amp; <span className="lh-serif-accent">living excellence.</span></>
-            )}
-          </h2>
-
-          <p className="lh-experience-subtitle">
-            {t('experienceSubtitle')}
-          </p>
+          <div className="lh-quote-right reveal-init reveal-delay-1">
+            <blockquote className="lh-quote-statement">
+              &ldquo;{t('philosophyQuote')}&rdquo;
+            </blockquote>
+            <div className="lh-quote-author-row">
+              <img
+                src="/assets/about/about-family.webp"
+                alt="LAND HUB Private Client Advisory"
+                className="lh-quote-avatar"
+                loading="lazy"
+              />
+              <div>
+                <p className="lh-quote-name">{t('philosophyAuthor')}</p>
+                <p className="lh-quote-role">LAND HUB · Dubai, UAE</p>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
 
-        {/* Large Immersive Architectural Theatre */}
-        <div className="lh-theatre-wrapper reveal-init reveal-delay-1">
-          <div className={`lh-theatre-display ${isTransitioning ? 'is-transitioning' : ''}`}>
-            {/* Background Video Layer */}
+      {/* Interactive Property Experience Stage on #f5f5f5 */}
+      <div className="lh-exp-stage-zone">
+        <div className="lh-exp-wrap">
+          <div className="lh-exp-header reveal-init">
+            <h2 className="lh-exp-title">{t('experienceTitle')}</h2>
+            <p className="lh-exp-sub">{t('experienceSubtitle')}</p>
+          </div>
+
+          <div className="lh-exp-cinema reveal-clip-up reveal-delay-1">
             <video
               key={current.src}
-              className="lh-theatre-video"
+              className="lh-exp-video"
               autoPlay
               muted
               loop
@@ -98,42 +95,32 @@ export function PropertyExperience() {
             >
               <source src={current.src} type="video/mp4" />
             </video>
+            <div className="lh-exp-scrim" />
 
-            {/* Scrim Overlay */}
-            <div className="lh-theatre-scrim" />
-
-            {/* Theatre Info Overlay */}
-            <div className="lh-theatre-info-overlay">
-              <span className="lh-theatre-district-tag">{current.district}</span>
-              <h3 className="lh-theatre-headline">{current.title}</h3>
-              <p className="lh-theatre-narrative">{current.narrative}</p>
-              <div className="lh-theatre-specs">
-                {current.specs.map((spec) => (
-                  <span key={spec} className="lh-theatre-spec-pill">
-                    {spec}
-                  </span>
-                ))}
-              </div>
+            <div className="lh-exp-overlay">
+              <span className="lh-exp-district">{current.district}</span>
+              <h3 className="lh-exp-headline">{current.title}</h3>
+              <p className="lh-exp-narrative">{current.narrative}</p>
+              <a href="#contact" className="lh-exp-cta">
+                <span>Request Private Viewing</span>
+                <span aria-hidden="true">{isRTL ? '←' : '→'}</span>
+              </a>
             </div>
           </div>
 
-          {/* Interactive Scene Selector Deck (Follows Selected Card Smoothly) */}
-          <div className="lh-scene-selector-grid" role="tablist" aria-label="Perspective Selector">
+          <div className="lh-exp-tabs" role="tablist" aria-label="Property Perspectives">
             {scenes.map((scene, idx) => (
               <button
                 key={scene.id}
                 type="button"
                 role="tab"
                 aria-selected={activeScene === idx}
-                className={`lh-scene-tab-card ${activeScene === idx ? 'is-active' : ''}`}
-                onClick={() => handleSceneChange(idx)}
+                className={`lh-exp-tab ${activeScene === idx ? 'is-active' : ''}`}
+                onClick={() => setActiveScene(idx)}
               >
-                <div className="lh-scene-tab-header">
-                  <span className="lh-scene-tab-cat">{scene.category}</span>
-                  <span className="lh-scene-tab-pip" aria-hidden="true" />
-                </div>
-                <h4 className="lh-scene-tab-title">{scene.title}</h4>
-                <p className="lh-scene-tab-district">{scene.district}</p>
+                <span className="lh-tab-cat">{scene.category}</span>
+                <span className="lh-tab-title">{scene.title}</span>
+                <span className="lh-tab-dist">{scene.district}</span>
               </button>
             ))}
           </div>

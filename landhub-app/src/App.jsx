@@ -8,6 +8,7 @@ import { About } from './components/About/About'
 import { Features } from './components/Features/Features'
 import { PropertyExperience } from './components/PropertyExperience/PropertyExperience'
 import { HowItWorks } from './components/HowItWorks/HowItWorks'
+import { FAQ } from './components/FAQ/FAQ'
 import { Contact } from './components/Contact/Contact'
 import { Footer } from './components/Footer/Footer'
 
@@ -15,36 +16,39 @@ function App() {
   return (
     <LanguageProvider>
       <div className="lh-main-wrapper">
-        {/* Minimalist Initial Page Loader */}
+        {/* 2-Second Official Logo Introduction */}
         <PageLoader />
 
-        {/* Slim Desktop Vertical Minibar on Left */}
+        {/* Left-Side Symbol-Only Section Navigation */}
         <VerticalMinibar />
 
-        {/* 01. NAVBAR */}
+        {/* PRYPCO-Style Floating White Pill Navbar */}
         <Navbar />
 
-        <main id="main-content">
-          {/* 02. CINEMATIC HERO */}
+        <main id="main-content" className="lh-main-rounded-frame">
+          {/* 01. Full-Bleed Video Hero + Centered White Bottom Dock */}
           <Hero />
 
-          {/* 03. PHILOSOPHY / ABOUT */}
+          {/* 02. Featured Split Card ("What is LAND HUB?") */}
           <About />
 
-          {/* 04. CAPABILITIES / SERVICES */}
+          {/* 03. Stepped 3-Column Pillars + Continuous Ecosystem Carousel */}
           <Features />
 
-          {/* 05. PROPERTY EXPERIENCE */}
+          {/* 04. Advisory Quote + Interactive Property Experience */}
           <PropertyExperience />
 
-          {/* 06. HOW IT WORKS & ARCHITECTURAL SHOWCASE */}
+          {/* 05. Sticky-Stacked 3-Card Process Sequence */}
           <HowItWorks />
 
-          {/* 07. CONTACT */}
+          {/* 06. Sticky Two-Column FAQ */}
+          <FAQ />
+
+          {/* 07. Direct Consultation / Contact Card */}
           <Contact />
         </main>
 
-        {/* 08. FOOTER */}
+        {/* 08. PRYPCO-Style Dark Footer with Background Wordmark */}
         <Footer />
       </div>
     </LanguageProvider>

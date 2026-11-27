@@ -8,13 +8,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.7s ease;
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.65s ease;
   pointer-events: all;
   user-select: none;
 }
 
 .lh-page-loader-overlay.is-fading {
   opacity: 0;
+  transform: scale(1.03);
   visibility: hidden;
   pointer-events: none;
 }
